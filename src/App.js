@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  ADD_NUMBER,
+  addNumber,
+} from './actions/mathOperations.js';
+import Number from './components/Number';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    console.log(ADD_NUMBER);
+    const addNumberAction = addNumber(1200);
+    console.log(addNumberAction);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Number />
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
